@@ -1,4 +1,5 @@
 langchain-community
-openai
+clarifai
+langchain
 requests
 duckduckgo-search
