@@ -30,11 +30,11 @@ webSearch = DuckDuckGoSearchRun()
 search_tool = Tool(
     name = "Web Search",
     func = webSearch.run,
-    description="A useful tool for searching the internet to find information on world events, issues etc. Worth using for general topic. Use precide questions."
+    description="A helpful tool to answer questions which require more upto date information or real time data."
 )
 
 agent = initialize_agent(
-    agent="zero-shot-react-description",
+    agent="chat-zero-shot-react-description",
     tools=[search_tool],
     llm=clarifai_llm,
     verbose=True,
