@@ -6,16 +6,10 @@ from langchain_community.tools import DuckDuckGoSearchRun
 import streamlit as st
 import os
 
-# UI
 st.title("Need an LLM with internet?")
 user_input = st.text_input("Enter your query...")
 
 clarifai_llm = Clarifai(pat=st.secrets["PAT"], user_id=st.secrets["USER_ID"], app_id=st.secrets["APP_ID"], model_id=st.secrets["MODEL_ID"])
-
-prompt = PromptTemplate(
-    input_variables=["query"],
-    template = "You are New Native Internal Bot. Help users with their important tasks, like a professor in a particular field. Query: {query}"
-)
 
 webSearch = DuckDuckGoSearchRun()
 
